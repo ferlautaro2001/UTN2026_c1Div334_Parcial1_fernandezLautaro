@@ -1,0 +1,190 @@
+:root {
+    /* Requisitos de diseño */
+    --color-precio: #ca9013;
+    --texto-descripcion: #808080;
+    --bg-oscuro-bloques: #000000;
+    --bg-body: #161616;
+    --padding-card: 15px;
+    --margin-card: 15px;
+    --radio-card: 16px;
+    --alto-img-producto: 180px;
+    --ancho-img-producto: 100%;
+    --dim-icono-principal: 55px;
+
+    /* Extras, por comodidad */
+
+    --texto-blanco: white;
+    --texto-hover: gray;
+    --color-exito: green;
+    --color-alerta: red;
+    --radio-boton: 8px;
+    --fuente-principal: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+/* --- Estilos generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--bg-body);
+}
+
+ul {
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+/* --- Estilos Header (encabezado) --- */
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-oscuro-bloques);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px #0000001a;
+}
+
+#icono-principal {
+    width: var(--dim-icono-principal);
+    height: var(--dim-icono-principal);
+}
+
+#titulo-principal {
+    color: var(--texto-blanco);
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#listado-opciones {
+    display: flex;
+    align-items: center;
+    height: var(--dim-icono-principal);
+    padding-top: 15px;
+}
+
+a {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-decoration: none;
+    color: var(--texto-blanco);
+    font-size: 17px;
+}
+
+a:hover {
+    color: var(--texto-hover);
+}
+ 
+/* --- Estilos Main (contenido) --- */
+.h2-separador {
+    background-color: var(--bg-oscuro-bloques);
+    padding: 10px;
+    color: var(--texto-blanco);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#listado-hamburguesas,
+#listado-bebidas,
+#listado-tragos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.li-hamburguesa,
+.li-bebida,
+.li-tragos {
+    background-color: var(--bg-oscuro-bloques);
+    color: var(--texto-blanco);
+    width: 250px;
+    padding: var(--padding-card);
+    margin: var(--margin-card);
+    border-radius: var(--radio-card);
+}
+
+.img-producto {
+    width: var(--ancho-img-producto);
+    height: var(--alto-img-producto);
+}
+
+.nombre-producto {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.precio-producto {
+    color: var(--color-precio);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.descripcion-producto {
+    color: var(--texto-descripcion);
+    min-height: 110px;
+    max-height: 110px;
+}
+
+.btn-sumar-a-carrito {
+    padding: 5px;
+    margin-top: 15px;
+    background-color: var(--color-exito);
+    border-radius: var(--radio-boton);
+    border: none;
+    width: 25px;
+    color: var(--texto-blanco);
+    cursor: pointer;
+}
+
+.btn-restar-a-carrito {
+    padding: 5px;
+    margin-top: 15px;
+    background-color: var(--color-alerta);
+    border-radius: var(--radio-boton);
+    border: none;
+    width: 25px;
+    color: var(--texto-blanco);
+    cursor: pointer;
+}
+
+#btn-ir-arriba {
+    position: fixed; /* Para que quede fijo */
+    bottom: var(--posicion-sticky-btn, 20px);
+    right: var(--posicion-sticky-btn, 20px);
+    background-color: var(--color-precio); /* Usamos esto para compatibilidad con el proyecto */
+    color: var(--texto-blanco);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000; /* Para que quede siempre encima de los productos */
+}
+
+footer {
+    background-color: var(--bg-oscuro-bloques);
+    color: var(--texto-blanco);
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+}
+
